@@ -269,6 +269,8 @@ tb_cartao as (
 )
 
 SELECT 
+       -- Na data 2018-01-01 usaremos python para tirar "foto" de cada vendedor em dias diferentes, haverá um movimento
+       -- com isso as estatísticas irão mudar por conta desse movimento
        '2018-01-01' AS dtReference,
        t1.*,
        t2.avgQtdeParcelas,
