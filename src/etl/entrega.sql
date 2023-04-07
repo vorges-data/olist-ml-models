@@ -43,3 +43,7 @@ SELECT
 FROM tb_pedido
 
 GROUP BY 1
+
+-- COMMAND ----------
+
+
