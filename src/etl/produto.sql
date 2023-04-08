@@ -1,4 +1,6 @@
 -- Databricks notebook source
+CREATE TABLE silver.analytics.fs_vendedor_produto
+
 WITH tb_join AS (
 
   SELECT DISTINCT

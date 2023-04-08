@@ -175,6 +175,7 @@ AND t1.dtPedido >= ADD_MONTHS('2018-01-01', -6)
 
 -- COMMAND ----------
 
+CREATE TABLE silver.analytics.fs_vendedor_pagamentos
 
 WITH tb_pedidos AS (
 
