@@ -1,4 +1,7 @@
 -- Databricks notebook source
+CREATE TABLE silver.analytics.fs_vendedor_cliente
+
+
 WITH tb_pedido AS (
 
   SELECT DISTINCT

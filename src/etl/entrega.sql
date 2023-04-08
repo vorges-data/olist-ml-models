@@ -1,4 +1,7 @@
 -- Databricks notebook source
+DROP TABLE IF EXISTS silver.analytics.fs_vendedor_entrega;
+CREATE TABLE silver.analytics.fs_vendedor_entrega
+
 WITH tb_pedido AS (
 
 SELECT t1.idPedido,
@@ -29,6 +32,7 @@ GROUP BY t1.idPedido,
 )
 
 SELECT
+    '2018-01-01' AS dtReference,
     idVendedor,
     COUNT(DISTINCT CASE WHEN DATE(COALESCE(dtEntregue, '2018-01-01')) > DATE(dtEstimativaEntrega) THEN idPedido END) / COUNT(DISTINCT CASE WHEN descSituacao = 'delivered' THEN idPedido END) AS pctPedidoAtraso,
     COUNT(DISTINCT CASE WHEN descSituacao = 'canceled' THEN idPedido END) / COUNT(DISTINCT idPedido) AS pctPedidoCancelado,
@@ -42,4 +46,4 @@ SELECT
        
 FROM tb_pedido
 
-GROUP BY 1
+GROUP BY 1,2

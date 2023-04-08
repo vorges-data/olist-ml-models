@@ -1,4 +1,5 @@
 -- Databricks notebook source
+CREATE TABLE silver.analytics.fs_vendedor_vendas
 
 WITH tb_pedido_item AS (
 
@@ -123,3 +124,7 @@ on t1.idVendedor = t3.idVendedor
 
 LEFT JOIN tb_intervalo AS t4
 ON t1.idVendedor = t4.idVendedor
+
+-- COMMAND ----------
+
+SELECT * FROM silver
